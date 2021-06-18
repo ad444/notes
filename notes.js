@@ -1,3 +1,4 @@
+localStorage.removeItem("notes");
 //application theme
 let moonIcon = document.getElementById("upper");
 let lowermoonIcon = document.getElementById("lower");
