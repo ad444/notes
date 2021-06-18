@@ -255,4 +255,20 @@ function minimizeNote(x) {
         e.parentElement.style.display = "block";
     });
     check = true;
+    let i;
+    let temp = [];
+    let notes = document.querySelectorAll(".notes");
+    notes.forEach(function(elem, index){
+        if(x.parentElement.outerHTML === elem.outerHTML){
+            i = index;
+            console.log(i);
+        }
+    });
+    temp = JSON.parse(localStorage.getItem("notes"));
+    temp.forEach(function(elem, index){
+        if(i == index){
+            temp[i] = x.parentElement.outerHTML;
+            localStorage.setItem("notes", JSON.stringify(temp));
+        }
+    });
 }
