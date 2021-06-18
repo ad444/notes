@@ -211,8 +211,8 @@ function calling() {
 
                     if (eleContent.innerText === e.innerText) {
                         eleParent.children[1].style.display = "inline-block";
-                        eleParent.children[2].style.display = "block";
-                        eleParent.children[3].style.display = "block";
+                        eleParent.children[2].children[0].style.display = "block";
+                        eleParent.children[2].children[1].style.display = "block";
                         eleContent.style.height = "auto";
                         eleContent.children[0].style.borderBottom = "2px solid #fab595";
                         eleContent.children[0].contentEditable = "true";
