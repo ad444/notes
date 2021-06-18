@@ -75,6 +75,7 @@ function Minimize() {
     noteContent.style.display = "none";
     minimize.style.display = "none";
     addNote.style.display = "none";
+    noteTitle.innerHTML = "Enter Title Here...";
 }
 
 //Displaying #noteContent division on clicking #noteTtile division
