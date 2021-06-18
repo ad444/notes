@@ -6,10 +6,11 @@ let xnoteTitle = document.getElementById("noteTitle");
 let xnoteContent = document.getElementById("noteContent");
 let ynoteTitle = document.getElementsByClassName("title");
 let ynoteContent = document.getElementsByClassName("content");
+
 var colorCheck = true;
 
 function applicationTheme() {
-
+   
     if (colorCheck) {
         document.body.style.backgroundColor = "#121212";
         header.style.backgroundColor = "#555555";
@@ -119,6 +120,11 @@ function call() {
 
     let title = document.createElement("p");
     title.className = "title";
+    if(!colorCheck){
+      title.style.color = "#F5F5F5";
+    }else{
+      title.style.color = "#000000";
+    }
     if (
         noteTitle.innerHTML != "Enter Title Here..." &&
         noteTitle.innerHTML != ""
@@ -127,6 +133,11 @@ function call() {
     }
     let content = document.createElement("p");
     content.className = "content";
+    if(!colorCheck){
+      content.style.color = "#F5F5F5";
+    }else{
+      content.style.color = "#000000";
+    }
     if (
         noteContent.innerHTML != "Enter Content Here..." &&
         noteContent.innerHTML != "") {
