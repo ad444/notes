@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes</title>
+  <link rel="icon" href="brain2.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="notes.css" type="text/css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div id="header" class="row">
+      <div class="col-4 col-sm-4">
+        <p id="title">Notes</p>
+      </div>
+      <div class="col-4 col-sm-6" id="smallDevices">
+        <div id="moon">
+          <div id="upper" onclick="applicationTheme()"></div>
+          <div id="lower"></div>
+        </div>
+      </div>
+      <div class="col-4 col-sm-2">
+        <p id="date">12/06/2021</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8 col-sm-8 mx-auto mt-4 mb-4">
+        <div id="note">
+          <div id="noteTitle">Enter Title Here...</div>
+          <div id="noteContent">Enter Content Here...</div>
+
+          <button id="addNote" onclick="call()">+</button>
+          <button id="minimize" onclick="Minimize()">-</button>
+        </div>
+      </div>
+    </div>
+    <div id="notesContainer" class="row mb-5"></div>
+    <div class="row mx-auto mt-5 mb-1">
+      <div id="footer" class="col-xs-6 col-sm-6 mx-auto">
+        <p id="footerText">Pure JavaScript based Notekeeping application.</p>
+        <!-- <p id="myName">Developed by :- Aman Dalal</p> -->
+      </div>
+    </div>
+  </div>
+  <script src="notes.js" async></script>
+</body>
+
+</html>

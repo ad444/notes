@@ -1,0 +1,238 @@
+body{
+   font-family: Arial, Helvetica, sans-serif;
+   background-color:#f8f9f5; 
+   transition:all 1s;
+}
+#header{
+   position:fixed;
+   width:100%;
+   background-color: #eec660;
+   border-bottom: 2px solid #eec660;
+   z-index:99;
+   transition:all 1s;
+}
+#title{
+   font-size:32px;
+   color:#F5F5F5;
+   margin:0px;
+   padding:0px;
+   margin:20px 0px;
+   cursor:pointer;
+}
+#moon{
+  width:50px;
+  height: auto;
+  float:right;
+  margin:0px;
+  padding:0px; 
+  margin-top:15px;
+  z-index: -99;
+}
+#upper{
+  width: 30px;
+  height:30px;
+  border-radius: 50%;
+  background-color:#121212;
+  position:absolute;
+  margin-top:10px;
+  margin-left:15px;
+  z-index:0;
+  transform: rotateZ(120deg);
+  cursor:pointer;
+  transition:all 1s;
+}
+#lower{
+  width: 30px;
+  height:30px;
+  border-radius: 50%;
+  background-color:#eec660;
+  transform: rotateZ(120deg);
+  margin-left:10px;
+  transition:all 1s;
+}
+#date{
+   font-size:18px;
+   color:#F5F5F5;
+   float:right;
+   margin:0px;
+   padding:0px;
+   margin:30px 0px;
+}
+#note{
+   margin-top:100px;
+}
+#noteTitle{
+  border:2px solid #fab595;
+  border-radius:3px;
+  height:auto;
+  margin:0px;
+  padding-left:5px;
+  font-size:20px;
+  font-weight:500;
+  outline:#eec660;
+  transition:all 1s;
+}
+#noteContent{
+  display:none;
+  border:2px solid #fab595;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  height:150px;
+  margin:0px;
+  padding:5px;
+  font-size:14px;
+  font-weight:5;
+  overflow:auto;
+  transition: all 2s;
+  outline:#eec660;
+  transition:all 1s;
+}
+#minimize{
+  display:none;
+  background-color:#fab595;
+  color:#F5F5F5;
+  font-size:24px;
+  width:40px;
+  height:40px;
+  float:right;
+  margin-top: 10px;
+  margin-right: 5px;
+  border:2px solid #fab595;
+  border-radius:50%;
+  outline:none;
+}
+#addNote{
+  display:none;
+  background-color:#eec660;
+  color:#F5F5F5;
+  font-size:24px;
+  width:40px;
+  height:40px;
+  float: right;
+  margin-top: 10px;
+  border:2px solid #eec660;
+  border-radius:50%;
+  outline:none;
+}
+#contentDate{
+  position:absolute;
+  bottom:0%;
+  right:10%;
+}
+#notesContainer{
+  margin-bottom: 20px;
+}
+.notes{
+  border:2px solid #eec660;
+  border-radius:3px;
+  margin-top:15px;
+  margin-bottom:5px;
+  width:240px;
+  height:auto;
+  overflow: hidden;
+  z-index:-0;
+  transition: all 0.2s;
+}
+.notes:hover{
+  transform:translateY(-5px);
+}
+.noteContainer{
+  height:60px;
+}
+.deleteBtn{
+  background-color:#fab595;
+  color:#F5F5F5;
+  font-size:24px;
+  width:40px;
+  height:40px;
+  margin-top:-10px;
+  margin-right:-20px;
+  text-align:center;
+  float:right;
+  border:2px solid #fab595;
+  border-radius:50%;
+  outline:none;
+  z-index:1000;
+}
+.minimizeBtn{
+  display: none;
+   background-color:#fab595;
+   color:#F5F5F5;
+   font-size:24px;
+   width:40px;
+   height:40px;
+   margin-right:-5px;
+   margin-top:-10px;
+   text-align: center;
+   float:right;
+   text-align: center;
+   border:2px solid #fab595;
+   border-radius:50%;
+   outline:none;
+   z-index:1000;
+}
+.deleteBtn:focus{
+  outline: none;
+}
+.title{
+  color:black;
+  font-size:20px;
+  font-weight:400;
+  padding-top:20px;
+  padding-bottom:5px;
+  line-height:24px;
+}
+.title:focus{
+  outline:none;
+}
+.content{
+  color:black;
+  line-height:24px;
+}
+.content:focus{
+  outline:none;
+}
+#footer{
+  position:fixed;
+  bottom:0%;
+  left:50%;
+  transform: translateX(-50%);
+  background-color:#eec660;
+  color:gray;
+  z-index:199;
+  border-radius: 3px;
+  transition:all 1s;
+}
+#footerText{
+  font-size: 15px;
+  margin:0px;
+  margin-top:5px;
+  margin-bottom:5px;
+  padding:0px;
+  text-align: center;
+  transition:all 1s;
+}
+#myName{
+  font-size: 14px;
+  margin:0px;
+  margin-bottom: 5px;
+  padding:0px;
+  text-align: right;
+}
+@media screen and (max-width :260px){
+   #title{
+       font-size:14px;
+   }
+   #date{
+       font-size:12px;
+   }
+}
+@media screen and (max-width : 768px){
+   #title{
+       font-size:24px;
+       margin:24px 0px;
+   }
+   #date{
+       font-size:16px;
+   }
+}
