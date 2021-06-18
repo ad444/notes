@@ -131,6 +131,9 @@ function call() {
     ) {
         title.innerHTML = noteTitle.innerHTML;
     }
+    if(noteTitle.innerHTML == ""){
+       title.style.display = "none";
+    }
     let content = document.createElement("p");
     content.className = "content";
     if(!colorCheck){
@@ -142,6 +145,8 @@ function call() {
         noteContent.innerHTML != "Enter Content Here..." &&
         noteContent.innerHTML != "") {
         content.innerHTML = noteContent.innerHTML;
+    }else{
+       content.style.display = "none";
     }
 
     let parent = document.createElement("div");
@@ -206,6 +211,8 @@ function calling() {
 
                     if (eleContent.innerText === e.innerText) {
                         eleParent.children[1].style.display = "inline-block";
+                        eleParent.children[2].style.display = "block";
+                        eleParent.children[3].style.display = "block";
                         eleContent.style.height = "auto";
                         eleContent.children[0].style.borderBottom = "2px solid #fab595";
                         eleContent.children[0].contentEditable = "true";
