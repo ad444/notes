@@ -48,6 +48,7 @@ body{
   background-color:#eec660;
   transform: rotateZ(120deg);
   margin-left:10px;
+  cursor:pointer;
   transition:all 1s;
 }
 #date{
@@ -60,28 +61,30 @@ body{
 }
 #note{
    margin-top:100px;
+   perspective:100px;
 }
 #noteTitle{
-  border:2px solid #fab595;
-  border-radius:3px;
+  background-color:#FFFFFF;
+  border-bottom: 2px solid #eec660;
+  border-radius:5px;
   height:auto;
   margin:0px;
-  padding-left:5px;
+  padding:15px;
   font-size:20px;
   font-weight:500;
   outline:#eec660;
   transition:all 1s;
+  transform-style: preserve-3d;
 }
 #noteContent{
   display:none;
-  border:2px solid #fab595;
-  border-bottom-left-radius:3px;
-  border-bottom-right-radius:3px;
+  background-color:#FFFFFF;
+  border-radius:5px;
   height:150px;
   margin:0px;
-  padding:5px;
-  font-size:14px;
-  font-weight:300;
+  padding:15px;
+  font-size:16px;
+  font-weight:5;
   overflow:auto;
   transition: all 2s;
   outline:#eec660;
@@ -123,18 +126,16 @@ body{
   margin-bottom: 20px;
 }
 .notes{
+  background-color: #FFFFFF;
   border:2px solid #eec660;
-  border-radius:3px;
+  border-radius:5px;
   margin-top:15px;
   margin-bottom:5px;
   width:240px;
   height:auto;
   overflow: hidden;
   z-index:-0;
-  transition: all 0.2s;
-}
-.notes:hover{
-  transform:translateY(-5px);
+  cursor:pointer;
 }
 .noteContainer{
   height:60px;
@@ -187,6 +188,7 @@ body{
 }
 .content{
   color:black;
+  padding-top:20px;
   line-height:24px;
 }
 .content:focus{
