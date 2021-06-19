@@ -1,4 +1,5 @@
 //application theme
+let noteBody = document.getElementsByClassName("notes");
 let moonIcon = document.getElementById("upper");
 let lowermoonIcon = document.getElementById("lower");
 let header = document.getElementById("header");
@@ -10,14 +11,22 @@ let ynoteContent = document.getElementsByClassName("content");
 var colorCheck = true;
 
 function applicationTheme() {
-   
-    if (colorCheck) {
+
+    if(colorCheck){
         document.body.style.backgroundColor = "#121212";
-        header.style.backgroundColor = "#555555";
+        header.style.backgroundColor = "#333333";
         xnoteTitle.style.color = "#F5F5F5";
+        xnoteTitle.style.backgroundColor = "#555555";
+        xnoteTitle.style.border = "none";
+        xnoteTitle.style.borderBottom = "2px solid #F5F5F5";
         moonIcon.style.backgroundColor = "#eec660";
         xnoteContent.style.color = "#F5F5F5";
-        lowermoonIcon.style.backgroundColor = "#555555";
+        xnoteContent.style.backgroundColor = "#555555";
+        xnoteContent.style.border = "none";
+        lowermoonIcon.style.backgroundColor = "#333333";
+        Array.from(noteBody).forEach(function (elem) {
+            elem.style.backgroundColor= "#555555";
+        });
         Array.from(ynoteTitle).forEach(function (elem) {
             elem.style.color = "#F5F5F5";
         });
@@ -29,9 +38,15 @@ function applicationTheme() {
         document.body.style.backgroundColor = "#f8f9f5";
         header.style.backgroundColor = "#eec660";
         xnoteTitle.style.color = "#000000";
+        xnoteTitle.style.backgroundColor = "#FFFFFF";
+        xnoteTitle.style.borderBottom = "2px solid #eec660";
         moonIcon.style.backgroundColor = "#121212";
         xnoteContent.style.color = "#000000";
+        xnoteContent.style.backgroundColor = "#FFFFFF";
         lowermoonIcon.style.backgroundColor = "#eec660";
+        Array.from(noteBody).forEach(function (elem) {
+            elem.style.backgroundColor= "#FFFFFF";
+        });
         Array.from(ynoteTitle).forEach(function (elem) {
             elem.style.color = "#000000";
         });
@@ -55,6 +70,21 @@ if (JSON.parse(localStorage.getItem("notes")) !== null) {
         actualNotesContainer.innerHTML += `${element}`;
     });
 }
+
+//Setting application theme to default
+Array.from(noteBody).forEach(function (elem) {
+    if(elem.style.backgroundColor == "#555555"){
+        elem.style.backgroundColor = "FFFFFF";
+        
+    };
+});
+Array.from(ynoteTitle).forEach(function (elem) {
+    elem.style.color = "#000000";
+});
+Array.from(ynoteContent).forEach(function (elem) {
+    elem.style.color = "#000000";
+});
+
 
 //Calling date class
 var realDate = new Date();
@@ -173,10 +203,15 @@ function call() {
             notes.unshift(parent.outerHTML);
             localStorage.setItem("notes", JSON.stringify(notes));
         }
-
+   }
+   if(colorCheck == false){
+        colorCheck = true;
+        applicationTheme();
+    }else{
+        colorCheck = false;
+        applicationTheme();
     }
     calling();
-
 }
 var check = true;
 
