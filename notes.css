@@ -200,7 +200,7 @@ body{
   left:50%;
   transform: translateX(-50%);
   background-color:#eec660;
-  color:gray;
+  color:#F5F5F5;
   z-index:199;
   border-radius: 3px;
   transition:all 1s;
