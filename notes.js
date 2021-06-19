@@ -120,27 +120,18 @@ function call() {
 
     let title = document.createElement("p");
     title.className = "title";
-    if(!colorCheck){
-      title.style.color = "#F5F5F5";
-    }else{
-      title.style.color = "#000000";
-    }
+   
     if (
         noteTitle.innerHTML != "Enter Title Here..." &&
         noteTitle.innerHTML != ""
     ) {
         title.innerHTML = noteTitle.innerHTML;
-    }
-    if(noteTitle.innerHTML == ""){
-       title.style.display = "none";
+    }else{
+        title.style.display = "none";
     }
     let content = document.createElement("p");
     content.className = "content";
-    if(!colorCheck){
-      content.style.color = "#F5F5F5";
-    }else{
-      content.style.color = "#000000";
-    }
+    
     if (
         noteContent.innerHTML != "Enter Content Here..." &&
         noteContent.innerHTML != "") {
@@ -166,11 +157,6 @@ function call() {
         Minimize();
     }
     else {
-        if (colorCheck) {
-            container.style.color = "#000000";
-        } else {
-            container.style.color = "#F5F5F5";
-        }
         let previousNote = document.querySelector(".notes");
         actualNotesContainer.insertBefore(parent, previousNote);
         noteContent.style.display = "none";
@@ -255,6 +241,16 @@ function minimizeNote(x) {
     let eleContent = x.parentElement.children[2];
     eleContent.style.height = "50px";
     x.style.display = "none";
+    if(eleContent.children[0].innerHTML == ""){
+       eleContent.children[0].style.display = "none";
+    }else{
+        eleContent.children[0].style.display = "block";
+    }
+    if(eleContent.children[1].innerHTML == ""){
+        eleContent.children[1].style.display = "none";
+    }else{
+        eleContent.children[1].style.display = "block";
+    }
     eleContent.children[0].style.borderBottom = "none";
     eleContent.children[0].contentEditable = "false";
     eleContent.children[1].contentEditable = "false";
@@ -268,7 +264,6 @@ function minimizeNote(x) {
     notes.forEach(function(elem, index){
         if(x.parentElement.outerHTML === elem.outerHTML){
             i = index;
-            console.log(i);
         }
     });
     temp = JSON.parse(localStorage.getItem("notes"));
