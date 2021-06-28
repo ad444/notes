@@ -26,6 +26,7 @@ function applicationTheme() {
         lowermoonIcon.style.backgroundColor = "#333333";
         Array.from(noteBody).forEach(function (elem) {
             elem.style.backgroundColor= "#555555";
+            elem.style.color= "#F5F5F5";
         });
         Array.from(ynoteTitle).forEach(function (elem) {
             elem.style.color = "#F5F5F5";
@@ -46,6 +47,7 @@ function applicationTheme() {
         lowermoonIcon.style.backgroundColor = "#eec660";
         Array.from(noteBody).forEach(function (elem) {
             elem.style.backgroundColor= "#FFFFFF";
+            elem.style.color= "#000000";
         });
         Array.from(ynoteTitle).forEach(function (elem) {
             elem.style.color = "#000000";
@@ -159,19 +161,19 @@ function call() {
     }else{
         title.style.display = "none";
     }
-    let content = document.createElement("p");
-    content.className = "content";
+    let contentContainer = document.createElement("div");
+    contentContainer.className = "content";
     
     if (
         noteContent.innerHTML != "Enter Content Here..." &&
         noteContent.innerHTML != "") {
-        content.innerHTML = noteContent.innerHTML;
+        contentContainer.innerHTML = noteContent.innerHTML;
     }else{
-       content.style.display = "none";
+       contentContainer.style.display = "none";
     }
 
     let parent = document.createElement("div");
-    parent.className = `notes col-11 col-sm-5 mx-auto`;
+    parent.className = `notes col-10 col-sm-5 mx-auto`;
     parent.innerHTML = `
         <button class="deleteBtn" onfocus="deleteNotes(this)"><span class="fa fa-trash w3-large"></span</button>
         <button class="minimizeBtn" onfocus="minimizeNote(this)" ><span class="fa fa-close w3-large"></span</button>
@@ -180,7 +182,7 @@ function call() {
     container.className = `noteContainer`;
 
     container.appendChild(title);
-    container.appendChild(content);
+    container.appendChild(contentContainer);
 
     parent.appendChild(container);
     if (container.innerHTML == "") {
@@ -235,6 +237,7 @@ function calling() {
                         eleParent.children[2].children[0].style.display = "block";
                         eleParent.children[2].children[1].style.display = "block";
                         eleContent.style.height = "auto";
+                        eleContent.style.cursor = "auto";
                         eleContent.children[0].style.borderBottom = "2px solid #fab595";
                         eleContent.children[0].contentEditable = "true";
                         eleContent.children[1].contentEditable = "true";
@@ -286,6 +289,7 @@ function minimizeNote(x) {
     }else{
         eleContent.children[1].style.display = "block";
     }
+    eleContent.style.cursor = "pointer";
     eleContent.children[0].style.borderBottom = "none";
     eleContent.children[0].contentEditable = "false";
     eleContent.children[1].contentEditable = "false";
@@ -304,8 +308,18 @@ function minimizeNote(x) {
     temp = JSON.parse(localStorage.getItem("notes"));
     temp.forEach(function(elem, index){
         if(i == index){
-            temp[i] = x.parentElement.outerHTML;
-            localStorage.setItem("notes", JSON.stringify(temp));
+            if(colorCheck == false){
+                x.parentElement.style.backgroundColor = "#FFFFFF";
+                x.parentElement.style.color = "#000000";
+                temp[i] = x.parentElement.outerHTML;
+                localStorage.setItem("notes", JSON.stringify(temp));  
+                x.parentElement.style.backgroundColor= "#555555";
+                x.parentElement.style.color= "#F5F5F5";
+            }else{
+                temp[i] = x.parentElement.outerHTML;
+                localStorage.setItem("notes", JSON.stringify(temp));  
+            }
+            
         }
     });
 }
